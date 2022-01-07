@@ -13,14 +13,13 @@ class Image extends Model
     protected $fillable = [
         'name',
         'image_path',
-        'event_date',
-        'event_id'
+        'gallery_id'
     ];
 
     /**
-     * Relacionamento com Imagens
+     * Relacionamento com Galeria
      */
-    public function event() {
-        return $this->belongsTo(Event::class);
+    public function gallery() {
+        return $this->belongsTo(Gallery::class);
     }
 }

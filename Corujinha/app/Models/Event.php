@@ -17,9 +17,9 @@ class Event extends Model
     ];
 
     /**
-     * Relacionamento com Imagens
+     * Relacionamento com Galerias
      */
-    public function images() {
-        return $this->hasMany(Image::class);
+    public function galleries() {
+        return $this->hasMany(Gallery::class);
     }
 }

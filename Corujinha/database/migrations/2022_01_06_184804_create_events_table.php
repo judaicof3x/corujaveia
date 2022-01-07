@@ -20,7 +20,7 @@ class CreateEventsTable extends Migration
             $table->text('description')->nullable();
             $table->string('event_photo_path', 2048)->nullable();
             $table->unsignedBigInteger('created_by');
-            $table->foreign('created_by')->references('id')->on('id')->onDelete('SET NULL');
+            $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

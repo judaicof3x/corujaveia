@@ -14,7 +14,7 @@ class ImageObserver
      */
     public function creating(Image $image)
     {
-        //
+        $image->created_by = auth()->user()->id;
     }
 
     /**

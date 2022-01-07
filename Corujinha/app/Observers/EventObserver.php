@@ -3,6 +3,7 @@
 namespace App\Observers;
 
 use App\Models\Event;
+use Illuminate\Support\Str;
 
 class EventObserver
 {
@@ -14,7 +15,8 @@ class EventObserver
      */
     public function creating(Event $event)
     {
-        //
+        $event->slug = Str::kebab($event->name);
+        $event->created_by = auth()->user()->id;
     }
 
     /**
@@ -25,7 +27,7 @@ class EventObserver
      */
     public function updating(Event $event)
     {
-        //
+        $event->slug = Str::kebab($event->name);
     }
 
     /**

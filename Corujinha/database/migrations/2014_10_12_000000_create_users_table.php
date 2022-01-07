@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('uuid')->default(Uuid::uuid6());
+            $table->enum('theme', ['dark', 'light'])->default('dark');
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
